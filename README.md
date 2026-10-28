@@ -1,8 +1,6 @@
-**Companion survey: *Test-Time Methods for Embodied AI: A Survey*.**
+**Test-Time Methods for Embodied AI: A Survey**
 
 A curated collection of papers, methods, and benchmarks on **test-time learning, adaptation, policy steering, and scaling for embodied AI**.
-
-**Paper format:** `Year_Venue_MethodName_Full Paper Title.` Titles are plain text. Official publication links, arXiv abstract pages, source-code repositories, model weights, and project websites are listed separately when known. Unverified links are omitted.
 
 > **Research question:** Once an embodied policy has been trained, how can it improve its behavior at test time through deployment observations, demonstrations, interaction feedback, or additional computation?
 
@@ -108,7 +106,6 @@ Methods that update parameters, adapters, fast weights or learned internal repre
 5. 2026_arXiv_VANE_VANE: Reliable Test-Time Training for Vision-Language-Action Models.
    [[arXiv]](https://arxiv.org/abs/2608.09448)
 
-
 #### 3.1.2. Feedback-Driven Adaptation
 
 1. 2025_CoLLAs_ROAM_Adapt On-the-Go: Behavior Modulation for Single-Life Robot Deployment.
@@ -123,7 +120,6 @@ Methods that update parameters, adapters, fast weights or learned internal repre
 4. 2026_arXiv_TTT-Parkour_TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour.
    [[arXiv]](https://arxiv.org/abs/2602.02331)
 
-
 #### 3.1.3. Fast-Weight Test-Time Training
 
 1. 2026_arXiv_RoboTTT_RoboTTT: Context Scaling for Robot Policies.
@@ -131,7 +127,6 @@ Methods that update parameters, adapters, fast weights or learned internal repre
 
 2. 2026_arXiv_WAM-TTT_WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time.
    [[arXiv]](https://arxiv.org/abs/2607.06988)
-
 
 ### 3.2. In-Context Learning and Adaptation
 
@@ -151,7 +146,6 @@ Methods that condition behavior on demonstrations or temporally accumulated evid
 4. 2026_arXiv_BPP_Behavior Prompting Policy: Demonstrations as Prompts for Manipulation.
    [[arXiv]](https://arxiv.org/abs/2606.30457)
 
-
 #### 3.2.2. Interaction-History Adaptation
 
 1. 2021_RSS_RMA_Rapid Motor Adaptation for Legged Robots.
@@ -163,12 +157,10 @@ Methods that condition behavior on demonstrations or temporally accumulated evid
 3. 2025_CoRL_LocoFormer_LocoFormer: Generalist Locomotion via Long-context Adaptation.
    [[arXiv]](https://arxiv.org/abs/2509.23745)
 
-
 #### 3.2.3. Retrieval-Augmented Adaptation
 
 1. 2026_arXiv_RA-VLA_RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation.
    [[ICML]](https://proceedings.mlr.press/v306/jang26c.html)  [[arXiv]](https://arxiv.org/abs/2608.25585)
-
 
 **Scope note:** Ordinary recurrent history or an unchanged task instruction does not automatically constitute test-time learning. We include work whose newly available context demonstrably supports behavioral adaptation.
 
@@ -189,7 +181,6 @@ Policy steering modifies **how actions are generated** from a pretrained policy,
 3. 2026_arXiv_Guided-Action-Flow_Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies.
    [[arXiv]](https://arxiv.org/abs/2607.02092)
 
-
 ### 4.2. Dynamics- and Constraint-Guided Steering
 
 1. 2025_NeurIPS_DynaGuide_DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance.
@@ -204,7 +195,6 @@ Policy steering modifies **how actions are generated** from a pretrained policy,
 4. 2026_CoRL_Task-Structure-Steering_Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure.
    [[arXiv]](https://arxiv.org/abs/2606.26588)
 
-
 ### 4.3. Policy Composition
 
 1. 2026_ICLR_GPC_Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition.
@@ -215,7 +205,6 @@ Policy steering modifies **how actions are generated** from a pretrained policy,
 
 3. 2026_CoRL_Proxy-Policy-Steering_Proxy Policy Steering.
    [[arXiv]](https://arxiv.org/abs/2609.09148)
-
 
 **Boundary:** Steering changes the action generation mechanism. Some steering methods also spend additional compute, so the boundary with scaling is not strictly exclusive.
 
@@ -239,7 +228,6 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 4. 2026_arXiv_CoVer_Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment.
    [[arXiv]](https://arxiv.org/abs/2602.12281)
 
-
 ### 5.2. Sequential Search and Refinement
 
 1. 2026_ICRA_VLA-Reasoner_VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search.
@@ -254,7 +242,6 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 4. 2026_arXiv_tau0-WM_τ0-WM: A Unified Video-Action World Model for Robotic Manipulation.
    [[arXiv]](https://arxiv.org/abs/2606.01027)
 
-
 ### 5.3. Adaptive Compute Allocation
 
 1. 2026_arXiv_VLA-ATTC_VLA-ATTC: Adaptive Test-Time Compute for VLA Models with Relative Action Critic Model.
@@ -265,7 +252,6 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 
 3. 2026_arXiv_tau0-VLA_τ0-VLA: A Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation.
    [[arXiv]](https://arxiv.org/abs/2608.16885)
-
 
 ---
 
