@@ -1,1 +1,275 @@
-# Awesome-Test-Time-Adaptation-for-Embodied-AI
+# Awesome Test-Time Methods for Embodied AI 🤖
+
+A curated collection of papers, methods, and benchmarks on **test-time learning, adaptation, policy steering, and scaling for embodied AI**.
+
+**Companion survey (in preparation): _Test-Time Methods for Embodied AI: A Survey_.**
+
+Maintained by [Jindong Li](https://github.com/jindongli-Ai). Contributions and corrections are welcome.
+
+> **Research question:** Once an embodied policy has been trained, how can it improve its behavior at test time through deployment observations, demonstrations, interaction feedback, or additional computation?
+
+**Focus:** robotic manipulation and vision-language-action (VLA) policies, with relevant research from navigation and locomotion. **Literature cutoff:** October 2026.
+
+## Contents
+
+- [1. Scope and Definitions](#1-scope-and-definitions)
+- [2. Taxonomy and Survey Outline](#2-taxonomy-and-survey-outline)
+- [3. Test-Time Learning and Adaptation](#3-test-time-learning-and-adaptation)
+- [4. Test-Time Policy Steering](#4-test-time-policy-steering)
+- [5. Test-Time Scaling](#5-test-time-scaling)
+- [6. Benchmarks and Evaluation](#6-benchmarks-and-evaluation)
+- [7. Open Challenges](#7-open-challenges)
+- [8. Related Collections and Surveys](#8-related-collections-and-surveys)
+- [9. Contributing and Citation](#9-contributing-and-citation)
+
+## 1. Scope and Definitions
+
+This collection studies **deployment-stage mechanisms** that improve the behavior of a pretrained or previously trained embodied policy. A method may update model parameters, adapters or fast weights; use new context; steer action generation; or allocate additional inference-time computation.
+
+| Term | Working definition |
+| --- | --- |
+| **Test-Time Learning (TTL)** | Uses deployment-time information to learn or acquire an adapted state; broadly encompasses some parametric and non-parametric adaptation mechanisms. |
+| **Test-Time Adaptation (TTA)** | Adapts behavior to a target task, environment or distribution using information encountered at test time. |
+| **Test-Time Training (TTT)** | Performs learning updates at test time, including gradient-based updates and fast-weight mechanisms; overlaps with TTA but is not synonymous with it. |
+| **In-Context Adaptation** | Conditions an embodied policy on test-time demonstrations, trajectories or interaction history, commonly without updating its base weights. |
+| **Policy Steering** | Guides the action-generation mechanism of an existing policy with rewards, value functions, dynamics, constraints or other policies. |
+| **Test-Time Scaling (TTS)** | Increases or dynamically allocates inference-time compute for sampling, search, verification, refinement or reasoning; not necessarily a learning method. |
+
+**Included:** test-time parameter/fast-weight adaptation, feedback-driven adaptation, in-context imitation, retrieval-augmented adaptation, inference-time action guidance, verification, search, and adaptive computation.
+
+**Excluded from the core taxonomy:** offline SFT or RL fine-tuning completed before deployment, generic computer-vision TTA with no embodied policy, and classical planning not aimed at enhancing a learned embodied policy at inference time. Such work may be cited as background.
+
+**Classification policy:** Papers are organized by **primary technical contribution**, not by a claim of mutual exclusivity. In particular, steering and scaling frequently overlap. Venue names are conservative: **arXiv** indicates preprint status unless a publication venue has been independently established.
+
+## 2. Taxonomy and Survey Outline
+
+Our three research themes are complementary:
+
+| Research theme | Central question | Representative mechanisms |
+| --- | --- | --- |
+| **Test-Time Learning and Adaptation** | What information can change an embodied policy's deployed behavior? | Model adaptation/training; in-context learning/adaptation. |
+| **Test-Time Policy Steering** | How can the action generation of a trained policy be guided? | Value/reward guidance; dynamics/constraint guidance; policy composition. |
+| **Test-Time Scaling** | How can additional inference-time compute improve decisions? | Parallel sampling and verification; sequential search/refinement; adaptive compute. |
+
+### Proposed paper outline
+
+1. **Introduction**
+2. **Background and Preliminaries**
+   - 2.1. Embodied Policies and Test-Time Settings
+   - 2.2. Test-Time Learning, Adaptation, and Scaling
+   - 2.3. Scope and Taxonomy
+3. **Test-Time Learning and Adaptation**
+   - 3.1. Model Adaptation and Training
+      - 3.1.1. Self-Supervised Adaptation
+      - 3.1.2. Feedback-Driven Adaptation
+      - 3.1.3. Fast-Weight Test-Time Training
+   - 3.2. In-Context Learning and Adaptation
+      - 3.2.1. Demonstration-Based Adaptation
+      - 3.2.2. Interaction-History Adaptation
+      - 3.2.3. Retrieval-Augmented Adaptation
+4. **Test-Time Policy Steering**
+   - 4.1. Value- and Reward-Guided Steering
+   - 4.2. Dynamics- and Constraint-Guided Steering
+   - 4.3. Policy Composition
+5. **Test-Time Scaling**
+   - 5.1. Parallel Sampling and Verification
+   - 5.2. Sequential Search and Refinement
+   - 5.3. Adaptive Compute Allocation
+6. **Benchmarks and Evaluation**
+   - 6.1. Test-Time Evaluation Settings
+   - 6.2. Benchmarks and Tasks
+   - 6.3. Evaluation Metrics and Protocols
+   - 6.4. Performance–Efficiency Trade-offs
+7. **Challenges and Future Directions**
+8. **Conclusion**
+
+The subsections are a working taxonomy and may be refined after a complete paper-by-paper screening.
+
+---
+
+## 3. Test-Time Learning and Adaptation
+
+### 3.1. Model Adaptation and Training
+
+Methods that update parameters, adapters, fast weights or learned internal representations using deployment information.
+
+#### 3.1.1. Self-Supervised Adaptation
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2021 | [Self-Supervised Policy Adaptation during Deployment (PAD)](https://arxiv.org/abs/2007.04309) | ICLR | Self-supervised adaptation under deployment shift. |
+| 2023 | [MoVie: Visual Model-Based Policy Adaptation for View Generalization](https://arxiv.org/abs/2307.00972) | NeurIPS | Visual model-based adaptation to new viewpoints. |
+| 2024 | [Fast-Slow Test-Time Adaptation for Online Vision-and-Language Navigation](https://arxiv.org/abs/2311.13209) | ICML | Fast and slow online adaptation for navigation. |
+| 2026 | [TTT-VLA: Test-Time Latent Prompt Optimization for Vision-Language-Action Models](https://arxiv.org/abs/2606.03127) | arXiv | Deployment-time optimization of a latent prompt. |
+| 2026 | [VANE: Reliable Test-Time Training for Vision-Language-Action Models](https://arxiv.org/abs/2608.09448) | arXiv | Future visual representation prediction for reliable updates. |
+
+#### 3.1.2. Feedback-Driven Adaptation
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2025 | [Adapt On-the-Go: Behavior Modulation for Single-Life Robot Deployment (ROAM)](https://arxiv.org/abs/2311.01059) | CoLLAs | Online behavior modulation within a single deployment. |
+| 2025 | [Test-Time Adaptation for Online Vision-Language Navigation with Feedback-based Reinforcement Learning](https://proceedings.mlr.press/v267/kim25ad.html) | ICML | Navigation adaptation from episodic feedback. |
+| 2026 | [On-the-Fly VLA Adaptation via Test-Time Reinforcement Learning (TT-VLA)](https://arxiv.org/abs/2601.06748) | arXiv | Test-time RL for adapting a VLA policy. |
+| 2026 | [TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour](https://arxiv.org/abs/2602.02331) | arXiv | Rapid deployment-stage locomotion adaptation. |
+
+#### 3.1.3. Fast-Weight Test-Time Training
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2026 | [RoboTTT: Context Scaling for Robot Policies](https://arxiv.org/abs/2607.15275) | arXiv | Recurrent fast weights for long visuomotor contexts. |
+| 2026 | [WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](https://arxiv.org/abs/2607.06988) | arXiv | Deployment-stage adaptation to human videos via learned state. |
+
+### 3.2. In-Context Learning and Adaptation
+
+Methods that condition behavior on demonstrations or temporally accumulated evidence, typically without updating base policy weights.
+
+#### 3.2.1. Demonstration-Based Adaptation
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2025 | [In-Context Imitation Learning via Next-Token Prediction (ICRT)](https://arxiv.org/abs/2408.15980) | ICRA | Sensorimotor demonstrations as task context. |
+| 2025 | [Instant Policy: In-Context Imitation Learning via Graph Diffusion](https://arxiv.org/abs/2411.12633) | ICLR | One-shot imitation through graph diffusion. |
+| 2025 | [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | arXiv | In-context adaptability for pretrained VLAs. |
+| 2026 | [Behavior Prompting Policy: Demonstrations as Prompts for Manipulation](https://arxiv.org/abs/2606.30457) | arXiv | Demonstration-based behavior prompting. |
+
+#### 3.2.2. Interaction-History Adaptation
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2021 | [Rapid Motor Adaptation for Legged Robots (RMA)](https://arxiv.org/abs/2107.04034) | RSS | Infers dynamics-related adaptation variables from observation history. |
+| 2023 | [Human-Timescale Adaptation in an Open-Ended Task Space](https://arxiv.org/abs/2301.07608) | ICML | Uses recent task experience for adaptation. |
+| 2025 | [LocoFormer: Generalist Locomotion via Long-context Adaptation](https://arxiv.org/abs/2509.23745) | CoRL | Long-context conditioning for locomotion. |
+
+#### 3.2.3. Retrieval-Augmented Adaptation
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2026 | [RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation](https://arxiv.org/abs/2608.25585) | arXiv | Retrieval of behavior-aligned demonstrations. |
+
+**Scope note:** Ordinary recurrent history or an unchanged task instruction does not automatically constitute test-time learning. We include work whose newly available context demonstrably supports behavioral adaptation.
+
+---
+
+## 4. Test-Time Policy Steering
+
+Policy steering modifies **how actions are generated** from a pretrained policy, often through an auxiliary critic, value function, dynamics model or constrained action representation.
+
+### 4.1. Value- and Reward-Guided Steering
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2024 | [Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance](https://arxiv.org/abs/2410.13816) | CoRL | Value-guided modification of pretrained robot policies. |
+| 2026 | [VLS: Steering Pretrained Robot Policies via Vision-Language Models](https://arxiv.org/abs/2602.03973) | arXiv | VLM-guided action generation. |
+| 2026 | [Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies](https://arxiv.org/abs/2607.02092) | arXiv | Q-guidance during action-flow inference. |
+
+### 4.2. Dynamics- and Constraint-Guided Steering
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2025 | [DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](https://arxiv.org/abs/2506.13922) | NeurIPS | Dynamics-based guidance for diffusion policies. |
+| 2025 | [Latent Policy Barrier: Learning Robust Visuomotor Policies by Staying In-Distribution](https://arxiv.org/abs/2508.05941) | NeurIPS | Constraint on leaving a learned action distribution. |
+| 2026 | [OmniGuide: Universal Guidance Fields for Enhancing Generalist Robot Policies](https://arxiv.org/abs/2603.10052) | arXiv | Action guidance using learned fields. |
+| 2026 | [Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure](https://arxiv.org/abs/2606.26588) | CoRL | Steering with physical and task constraints. |
+
+### 4.3. Policy Composition
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2026 | [Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition (GPC)](https://arxiv.org/abs/2510.01068) | ICLR | Test-time combination of generative policy distributions. |
+| 2026 | [PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation](https://arxiv.org/abs/2607.07076) | arXiv | Guides policies with action primitives. |
+| 2026 | [Proxy Policy Steering](https://arxiv.org/abs/2609.09148) | CoRL | Proxy-policy guidance for frozen generative control. |
+
+**Boundary:** Steering changes the action generation mechanism. Some steering methods also spend additional compute, so the boundary with scaling is not strictly exclusive.
+
+---
+
+## 5. Test-Time Scaling
+
+Scaling improves decisions through more or adaptively allocated **inference computation**, without necessarily learning or updating weights.
+
+### 5.1. Parallel Sampling and Verification
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2025 | [RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models](https://arxiv.org/abs/2506.17811) | CoRL | Samples action candidates and verifies them. |
+| 2026 | [Verifier-free Test-Time Sampling for Vision-Language-Action Models (MG-Select)](https://arxiv.org/abs/2510.05681) | ICLR | Selects action candidates without an external verifier. |
+| 2025 | [RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model](https://arxiv.org/abs/2510.10975) | arXiv | Learned reward model to evaluate actions. |
+| 2026 | [Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment (CoVer)](https://arxiv.org/abs/2602.12281) | arXiv | Increased candidate verification for VLA alignment. |
+
+### 5.2. Sequential Search and Refinement
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2026 | [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | ICRA | Online MCTS for robot action decision-making. |
+| 2026 | [SAIL: Test-Time Scaling for In-Context Imitation Learning with VLM](https://arxiv.org/abs/2603.08269) | arXiv | Iterative test-time search and refinement. |
+| 2026 | [E-TTS: A New Embodied Test-Time Scaling Framework for Robotic Manipulation](https://arxiv.org/abs/2606.27268) | arXiv | Integrates reasoning with iterative action improvement. |
+| 2026 | [τ0-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | arXiv | Imagined action rollouts and rectification. |
+
+### 5.3. Adaptive Compute Allocation
+
+| Year | Paper | Venue | Main idea |
+| --- | --- | --- | --- |
+| 2026 | [VLA-ATTC: Adaptive Test-Time Compute for VLA Models with Relative Action Critic Model](https://arxiv.org/abs/2605.01194) | arXiv | Conditional allocation of inference budget. |
+| 2026 | [ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies](https://arxiv.org/abs/2606.31132) | CoRL | Learns how much sampling and denoising to use. |
+| 2026 | [τ0-VLA: A Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation](https://arxiv.org/abs/2608.16885) | arXiv | Hierarchical world-model-guided test-time computation. |
+
+---
+
+## 6. Benchmarks and Evaluation
+
+### 6.1. Representative Environments
+
+| Area | Example benchmarks / platforms | Main use |
+| --- | --- | --- |
+| Manipulation | [LIBERO](https://libero-project.github.io/), [SimplerEnv](https://simpler-env.github.io/), [RLBench](https://github.com/stepjam/RLBench), [robomimic](https://robomimic.github.io/), [RoboTwin](https://robotwin-platform.github.io/) | Task success under object, visual and environment changes. |
+| Long-horizon manipulation | [CALVIN](https://github.com/mees/calvin) | Chained tasks and extended execution. |
+| Navigation | [Habitat](https://aihabitat.org/), [VLN-CE](https://github.com/jacobkrantz/VLN-CE) | Unseen environments and episode adaptation. |
+| Locomotion | [Isaac Lab](https://isaac-sim.github.io/IsaacLab/) | Dynamics changes and terrain robustness. |
+
+*These are potential evaluation resources, not a claim that every method in this collection uses them.*
+
+### 6.2. Evaluation Dimensions
+
+| Dimension | Suggested measurements |
+| --- | --- |
+| Task performance | Success rate, return, completion, performance gain over frozen baseline. |
+| Generalization | Unseen environments, objects, camera shifts, dynamics changes, new embodiments. |
+| Adaptation cost | Number of test-time updates, demonstrations, robot interactions, rewards, resets. |
+| Compute and latency | Action inference time, control frequency, GPU time, candidates sampled, search steps, verifier calls. |
+| Reliability | Failure rate, unsafe actions, drift, forgetting, rollback rate. |
+| Fairness | Same initial policy, access to feedback, interaction/compute budgets, reset protocol. |
+
+**Reporting principle:** compare both *performance versus deployment interaction budget* (learning/adaptation) and *performance versus test-time computation or latency* (scaling). Do not conflate offline pretraining costs with deployment costs.
+
+## 7. Open Challenges
+
+1. **When to adapt?** Distinguishing meaningful deployment shifts from temporary observation noise or recoverable mistakes.
+2. **What to adapt?** Selecting weights, latent states, contexts or inference-time guidance mechanisms.
+3. **How to learn from weak feedback?** Handling delayed reward, incorrect success labels, imperfect critics and world models.
+4. **How to preserve stability?** Avoiding policy drift, catastrophic forgetting, negative transfer and dangerous experiments.
+5. **When does scaling pay off?** Balancing improved decisions against real-time latency, compute and control stability.
+6. **How to evaluate fairly?** Accounting for extra demonstration access, interaction resets, computation and privileged feedback.
+
+## 8. Related Collections and Surveys
+
+**Community paper collections**
+
+- [Awesome Test-Time Robot Learning](https://github.com/Oliverbansk/Awesome-Test-Time-Robot-Learning) — test-time robot RL, adaptation, steering, in-context learning and scaling.
+- [awesome_robo_ttt](https://github.com/asimfish/awesome_robo_ttt) — TTA/TTT foundations, fast-weight learning and robot policy deployment.
+
+**Broader test-time surveys**
+
+- [A Survey on Self-Improving Test-Time Intelligence: Feedback-Driven Adapting, Learning, and Scaling at Inference](https://arxiv.org/abs/2609.01679) (2026).
+- [Beyond Model Adaptation at Test Time: A Survey](https://arxiv.org/abs/2411.03687) (2024).
+
+This collection focuses on **embodied policy execution** and deployment-time interventions, rather than generic test-time learning in image classification or language-only benchmarks.
+
+## 9. Contributing and Citation
+
+Paper additions, verified publication updates, reproducibility results, and taxonomy corrections are welcome through [GitHub issues](https://github.com/jindongli-Ai/Awesome-Test-Time-Methods-for-Embodied-AI/issues) or pull requests. Please provide the **paper title, stable public URL, release year, verified venue, deployment-time mechanism, and its reason for inclusion**.
+
+**Citation:** The companion survey is in preparation. Please cite original papers when discussing their methods and link to this repository when referring to this collection. We will provide a BibTeX entry when a public survey preprint is available.
+
+---
+
+Maintained by [Jindong Li](https://github.com/jindongli-Ai). This is an evolving literature map; categorization and publication metadata will be updated as the survey progresses.
