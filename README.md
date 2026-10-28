@@ -284,7 +284,7 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 | Navigation | [Habitat](https://aihabitat.org/), [VLN-CE](https://github.com/jacobkrantz/VLN-CE) | Unseen environments and episode adaptation. |
 | Locomotion | [Isaac Lab](https://isaac-sim.github.io/IsaacLab/) | Dynamics changes and terrain robustness. |
 
-*These are potential evaluation resources, not a claim that every method in this collection uses them.*
+*These are evaluation resources and platforms; they are not all test-time methods, nor is every benchmark used by every paper in Sections 3–5.*
 
 ### 6.2. Evaluation Dimensions
 
@@ -299,6 +299,34 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 
 **Reporting principle:** compare both *performance versus deployment interaction budget* (learning/adaptation) and *performance versus test-time computation or latency* (scaling). Do not conflate offline pretraining costs with deployment costs.
 
+### 6.3. Benchmark and Evaluation Papers
+
+The following papers introduce or substantiate the evaluation platforms above. Paper titles are plain text; venue, arXiv abstract, code, and project links are provided separately.
+
+1. 2023_NeurIPS_LIBERO_LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning.
+   [[NeurIPS]](https://proceedings.neurips.cc/paper_files/paper/2023/hash/8c3c666820ea055a77726d66fc7d447f-Abstract-Datasets_and_Benchmarks.html)  [[arXiv]](https://arxiv.org/abs/2306.03310)  [[GitHub]](https://github.com/Lifelong-Robot-Learning/LIBERO)  [[Project]](https://libero-project.github.io/)
+
+2. 2024_CoRL_SIMPLER_Evaluating Real-World Robot Manipulation Policies in Simulation.
+   [[CoRL]](https://proceedings.mlr.press/v270/li25c.html)  [[arXiv]](https://arxiv.org/abs/2405.05941)  [[GitHub]](https://github.com/simpler-env/SimplerEnv)  [[Project]](https://simpler-env.github.io/)
+
+3. 2020_RA-L_RLBench_RLBench: The Robot Learning Benchmark & Learning Environment.
+   [[IEEE RA-L]](https://doi.org/10.1109/LRA.2020.2974707)  [[arXiv]](https://arxiv.org/abs/1909.12271)  [[GitHub]](https://github.com/stepjam/RLBench)
+
+4. 2021_CoRL_robomimic_What Matters in Learning from Offline Human Demonstrations for Robot Manipulation.
+   [[CoRL]](https://proceedings.mlr.press/v164/mandlekar22a.html)  [[arXiv]](https://arxiv.org/abs/2108.03298)  [[Project]](https://robomimic.github.io/)
+
+5. 2025_CVPR_RoboTwin_RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins.
+   [[CVPR]](https://openaccess.thecvf.com/content/CVPR2025/html/Mu_RoboTwin_Dual-Arm_Robot_Benchmark_with_Generative_Digital_Twins_CVPR_2025_paper.html)  [[arXiv]](https://arxiv.org/abs/2504.13059)  [[GitHub]](https://github.com/RoboTwin-Platform/RoboTwin)  [[Project]](https://robotwin-platform.github.io/)
+
+6. 2022_RA-L_CALVIN_CALVIN: A Benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks.
+   [[IEEE RA-L]](https://ieeexplore.ieee.org/document/9788026)  [[arXiv]](https://arxiv.org/abs/2112.03227)  [[GitHub]](https://github.com/mees/calvin)
+
+7. 2019_ICCV_Habitat_Habitat: A Platform for Embodied AI Research.
+   [[ICCV]](https://openaccess.thecvf.com/content_ICCV_2019/html/Savva_Habitat_A_Platform_for_Embodied_AI_Research_ICCV_2019_paper.html)  [[arXiv]](https://arxiv.org/abs/1904.01201)  [[Project]](https://aihabitat.org/)
+
+8. 2025_arXiv_Isaac-Lab_Isaac Lab: A GPU-Accelerated Simulation Framework for Multi-Modal Robot Learning.
+   [[arXiv]](https://arxiv.org/abs/2511.04831)  [[GitHub]](https://github.com/isaac-sim/IsaacLab)  [[Project]](https://research.nvidia.com/labs/prl/publication/isaaclab2025/)
+
 ## 7. Open Challenges
 
 1. **When to adapt?** Distinguishing meaningful deployment shifts from temporary observation noise or recoverable mistakes.
@@ -308,19 +336,43 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 5. **When does scaling pay off?** Balancing improved decisions against real-time latency, compute and control stability.
 6. **How to evaluate fairly?** Accounting for extra demonstration access, interaction resets, computation and privileged feedback.
 
+### 7.1. Related Papers on Reliability and Failure Monitoring
+
+These studies provide concrete evidence on runtime monitoring, uncertainty, and safety-related challenges. Failure detectors are **supporting research**, not automatically test-time adaptation algorithms.
+
+1. 2024_CoRL_Sentinel_Unpacking Failure Modes of Generative Policies: Runtime Monitoring of Consistency and Progress.
+   [[CoRL]](https://proceedings.mlr.press/v270/agia25a.html)  [[arXiv]](https://arxiv.org/abs/2410.04640)  [[GitHub]](https://github.com/agiachris/sentinel)  [[Project]](https://sites.google.com/stanford.edu/sentinel)
+
+2. 2025_RSS_FAIL-Detect_Can We Detect Failures Without Failure Data? Uncertainty-Aware Runtime Failure Detection for Imitation Learning Policies.
+   [[RSS]](https://www.roboticsproceedings.org/rss21/p073.pdf)  [[arXiv]](https://arxiv.org/abs/2503.08558)  [[GitHub]](https://github.com/CXU-TRI/FAIL-Detect)  [[Project]](https://cxu-tri.github.io/FAIL-Detect-Website/)
+
+3. 2025_NeurIPS_SAFE_SAFE: Multitask Failure Detection for Vision-Language-Action Models.
+   [[NeurIPS]](https://proceedings.neurips.cc/paper_files/paper/2025/hash/392d0d05e2f514063e6ce6f8b370834c-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2506.09937)  [[GitHub]](https://github.com/vla-safe/SAFE)  [[Project]](https://vla-safe.github.io/)
+
 ## 8. Related Collections and Surveys
 
-**Community paper collections**
+### 8.1. Community Paper Collections
 
-- [Awesome Test-Time Robot Learning](https://github.com/Oliverbansk/Awesome-Test-Time-Robot-Learning) — test-time robot RL, adaptation, steering, in-context learning and scaling.
+These items are GitHub literature collections, **not research papers**, so their repository names remain linked directly.
+
+- [Awesome Test-Time Robot Learning](https://github.com/Oliverbansk/Awesome-Test-Time-Robot-Learning) — deployment-stage robot RL, adaptation, steering, in-context learning and scaling.
 - [awesome_robo_ttt](https://github.com/asimfish/awesome_robo_ttt) — TTA/TTT foundations, fast-weight learning and robot policy deployment.
 
-**Broader test-time surveys**
+### 8.2. Related Survey Papers
 
-- [A Survey on Self-Improving Test-Time Intelligence: Feedback-Driven Adapting, Learning, and Scaling at Inference](https://arxiv.org/abs/2609.01679) (2026).
-- [Beyond Model Adaptation at Test Time: A Survey](https://arxiv.org/abs/2411.03687) (2024).
+1. 2024_arXiv_TTA-Survey_Beyond Model Adaptation at Test Time: A Survey.
+   [[arXiv]](https://arxiv.org/abs/2411.03687)
 
-This collection focuses on **embodied policy execution** and deployment-time interventions, rather than generic test-time learning in image classification or language-only benchmarks.
+2. 2025_IJCV_OTTA-Survey_In Search of Lost Online Test-Time Adaptation: A Survey.
+   [[IJCV]](https://link.springer.com/article/10.1007/s11263-024-02213-5)  [[arXiv]](https://arxiv.org/abs/2310.20199)  [[GitHub]](https://github.com/Jo-wang/OTTA_ViT_survey)
+
+3. 2026_Expert-Systems_TTL-Survey_From Static to Adaptive Inference: A Survey on Test-Time Learning.
+   [[Expert Systems]](https://doi.org/10.1111/exsy.70446)
+
+4. 2026_arXiv_TTI-Survey_A Survey on Self-Improving Test-Time Intelligence: Feedback-Driven Adapting, Learning, and Scaling at Inference.
+   [[arXiv]](https://arxiv.org/abs/2609.01679)
+
+This collection focuses on **embodied policy execution** and deployment-time interventions, whereas these surveys cover broader test-time methods in vision, language, multimodal AI, or general machine learning.
 
 ## 9. Contributing and Citation
 
