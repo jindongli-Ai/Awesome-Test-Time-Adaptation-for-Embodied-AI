@@ -2,8 +2,6 @@
 
 A curated collection of papers, methods, and benchmarks on **test-time learning, adaptation, policy steering, and scaling for embodied AI**.
 
-
-
 **Paper format:** `Year_Venue_MethodName_Full Paper Title.` Titles are plain text. Official publication links, arXiv abstract pages, source-code repositories, model weights, and project websites are listed separately when known. Unverified links are omitted.
 
 > **Research question:** Once an embodied policy has been trained, how can it improve its behavior at test time through deployment observations, demonstrations, interaction feedback, or additional computation?
@@ -376,7 +374,7 @@ This collection focuses on **embodied policy execution** and deployment-time int
 
 Paper additions, verified publication updates, reproducibility results, and taxonomy corrections are welcome through [GitHub issues](https://github.com/jindongli-Ai/Awesome-Test-Time-Methods-for-Embodied-AI/issues) or pull requests. Please provide the **paper title, stable public URL, release year, verified venue, deployment-time mechanism, and its reason for inclusion**.
 
-**Citation:** The companion survey is in preparation. Please cite original papers when discussing their methods and link to this repository when referring to this collection. We will provide a BibTeX entry when a public survey preprint is available.
+**Citation:** Please cite original papers when discussing their methods and link to this repository when referring to this collection. We will provide a BibTeX entry when a public survey preprint is available.
 
 ---
 
