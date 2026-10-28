@@ -4,7 +4,6 @@ A curated collection of papers, methods, and benchmarks on **test-time learning,
 
 **Companion survey (in preparation): _Test-Time Methods for Embodied AI: A Survey_.**
 
-Maintained by [Jindong Li](https://github.com/jindongli-Ai). Contributions and corrections are welcome.
 
 **Paper format:** `Year_Venue_MethodName_Full Paper Title.` Titles are plain text. Official publication links, arXiv abstract pages, source-code repositories, model weights, and project websites are listed separately when known. Unverified links are omitted.
 
@@ -382,4 +381,3 @@ Paper additions, verified publication updates, reproducibility results, and taxo
 
 ---
 
-Maintained by [Jindong Li](https://github.com/jindongli-Ai). This is an evolving literature map; categorization and publication metadata will be updated as the survey progresses.
