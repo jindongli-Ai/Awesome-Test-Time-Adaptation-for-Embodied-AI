@@ -171,7 +171,7 @@ Methods that condition behavior on demonstrations or temporally accumulated evid
 #### 3.2.3. Retrieval-Augmented Adaptation
 
 1. 2026_arXiv_RA-VLA_RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation.
-   [[Official: ICML]](https://proceedings.mlr.press/v306/jang26c.html)  [[arXiv]](https://arxiv.org/abs/2608.25585)
+   [[ICML]](https://proceedings.mlr.press/v306/jang26c.html)  [[arXiv]](https://arxiv.org/abs/2608.25585)
 
 
 **Scope note:** Ordinary recurrent history or an unchanged task instruction does not automatically constitute test-time learning. We include work whose newly available context demonstrably supports behavioral adaptation.
@@ -197,7 +197,7 @@ Policy steering modifies **how actions are generated** from a pretrained policy,
 ### 4.2. Dynamics- and Constraint-Guided Steering
 
 1. 2025_NeurIPS_DynaGuide_DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance.
-   [[Official: NeurIPS]](https://proceedings.neurips.cc/paper_files/paper/2025/hash/3ec6c6fc9065aa57785eb05dffe7c3db-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2506.13922)  [[GitHub]](https://github.com/MaxDu17/DynaGuide)  [[Project]](https://dynaguide.github.io/)
+   [[NeurIPS]](https://proceedings.neurips.cc/paper_files/paper/2025/hash/3ec6c6fc9065aa57785eb05dffe7c3db-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2506.13922)  [[GitHub]](https://github.com/MaxDu17/DynaGuide)  [[Project]](https://dynaguide.github.io/)
 
 2. 2025_NeurIPS_Latent-Policy-Barrier_Latent Policy Barrier: Learning Robust Visuomotor Policies by Staying In-Distribution.
    [[arXiv]](https://arxiv.org/abs/2508.05941)
@@ -212,7 +212,7 @@ Policy steering modifies **how actions are generated** from a pretrained policy,
 ### 4.3. Policy Composition
 
 1. 2026_ICLR_GPC_Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition.
-   [[Official: ICLR]](https://proceedings.iclr.cc/paper_files/paper/2026/hash/f7fc38fdd95fd146a471791b93ff9f12-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2510.01068)  [[GitHub]](https://github.com/SageCao1125/GPC)  [[Project]](https://sagecao1125.github.io/GPC-Site/)
+   [[ICLR]](https://proceedings.iclr.cc/paper_files/paper/2026/hash/f7fc38fdd95fd146a471791b93ff9f12-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2510.01068)  [[GitHub]](https://github.com/SageCao1125/GPC)  [[Project]](https://sagecao1125.github.io/GPC-Site/)
 
 2. 2026_arXiv_PriGo_PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation.
    [[arXiv]](https://arxiv.org/abs/2607.07076)
@@ -232,10 +232,10 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 ### 5.1. Parallel Sampling and Verification
 
 1. 2025_CoRL_RoboMonkey_RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models.
-   [[Official: CoRL]](https://proceedings.mlr.press/v305/kwok25a.html)  [[arXiv]](https://arxiv.org/abs/2506.17811)  [[Project]](https://robomonkey-vla.github.io/)
+   [[CoRL]](https://proceedings.mlr.press/v305/kwok25a.html)  [[arXiv]](https://arxiv.org/abs/2506.17811)  [[Project]](https://robomonkey-vla.github.io/)
 
 2. 2026_ICLR_MG-Select_Verifier-free Test-Time Sampling for Vision-Language-Action Models.
-   [[Official: ICLR]](https://openreview.net/forum?id=UD4Rw8MOEK)  [[arXiv]](https://arxiv.org/abs/2510.05681)  [[GitHub]](https://github.com/suhyeok-jang/mg-select)  [[Project]](https://suhyeok-jang.github.io/mg-select/)
+   [[ICLR]](https://openreview.net/forum?id=UD4Rw8MOEK)  [[arXiv]](https://arxiv.org/abs/2510.05681)  [[GitHub]](https://github.com/suhyeok-jang/mg-select)  [[Project]](https://suhyeok-jang.github.io/mg-select/)
 
 3. 2025_arXiv_RoVer_RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model.
    [[arXiv]](https://arxiv.org/abs/2510.10975)
