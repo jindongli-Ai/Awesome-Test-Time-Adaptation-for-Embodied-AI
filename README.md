@@ -6,6 +6,8 @@ A curated collection of papers, methods, and benchmarks on **test-time learning,
 
 Maintained by [Jindong Li](https://github.com/jindongli-Ai). Contributions and corrections are welcome.
 
+**Paper format:** `Year_Venue_MethodName_Full Paper Title.` Titles are plain text. Official publication links, arXiv abstract pages, source-code repositories, model weights, and project websites are listed separately when known. Unverified links are omitted.
+
 > **Research question:** Once an embodied policy has been trained, how can it improve its behavior at test time through deployment observations, demonstrations, interaction feedback, or additional computation?
 
 **Focus:** robotic manipulation and vision-language-action (VLA) policies, with relevant research from navigation and locomotion. **Literature cutoff:** October 2026.
@@ -95,29 +97,45 @@ Methods that update parameters, adapters, fast weights or learned internal repre
 
 #### 3.1.1. Self-Supervised Adaptation
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2021 | [Self-Supervised Policy Adaptation during Deployment (PAD)](https://arxiv.org/abs/2007.04309) | ICLR | Self-supervised adaptation under deployment shift. |
-| 2023 | [MoVie: Visual Model-Based Policy Adaptation for View Generalization](https://arxiv.org/abs/2307.00972) | NeurIPS | Visual model-based adaptation to new viewpoints. |
-| 2024 | [Fast-Slow Test-Time Adaptation for Online Vision-and-Language Navigation](https://arxiv.org/abs/2311.13209) | ICML | Fast and slow online adaptation for navigation. |
-| 2026 | [TTT-VLA: Test-Time Latent Prompt Optimization for Vision-Language-Action Models](https://arxiv.org/abs/2606.03127) | arXiv | Deployment-time optimization of a latent prompt. |
-| 2026 | [VANE: Reliable Test-Time Training for Vision-Language-Action Models](https://arxiv.org/abs/2608.09448) | arXiv | Future visual representation prediction for reliable updates. |
+1. 2021_ICLR_PAD_Self-Supervised Policy Adaptation during Deployment.
+   [[arXiv]](https://arxiv.org/abs/2007.04309)
+
+2. 2023_NeurIPS_MoVie_MoVie: Visual Model-Based Policy Adaptation for View Generalization.
+   [[arXiv]](https://arxiv.org/abs/2307.00972)
+
+3. 2024_ICML_FSTTA_Fast-Slow Test-Time Adaptation for Online Vision-and-Language Navigation.
+   [[arXiv]](https://arxiv.org/abs/2311.13209)
+
+4. 2026_arXiv_TTT-VLA_TTT-VLA: Test-Time Latent Prompt Optimization for Vision-Language-Action Models.
+   [[arXiv]](https://arxiv.org/abs/2606.03127)
+
+5. 2026_arXiv_VANE_VANE: Reliable Test-Time Training for Vision-Language-Action Models.
+   [[arXiv]](https://arxiv.org/abs/2608.09448)
+
 
 #### 3.1.2. Feedback-Driven Adaptation
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2025 | [Adapt On-the-Go: Behavior Modulation for Single-Life Robot Deployment (ROAM)](https://arxiv.org/abs/2311.01059) | CoLLAs | Online behavior modulation within a single deployment. |
-| 2025 | [Test-Time Adaptation for Online Vision-Language Navigation with Feedback-based Reinforcement Learning](https://proceedings.mlr.press/v267/kim25ad.html) | ICML | Navigation adaptation from episodic feedback. |
-| 2026 | [On-the-Fly VLA Adaptation via Test-Time Reinforcement Learning (TT-VLA)](https://arxiv.org/abs/2601.06748) | arXiv | Test-time RL for adapting a VLA policy. |
-| 2026 | [TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour](https://arxiv.org/abs/2602.02331) | arXiv | Rapid deployment-stage locomotion adaptation. |
+1. 2025_CoLLAs_ROAM_Adapt On-the-Go: Behavior Modulation for Single-Life Robot Deployment.
+   [[arXiv]](https://arxiv.org/abs/2311.01059)
+
+2. 2025_ICML_Method_Test-Time Adaptation for Online Vision-Language Navigation with Feedback-based Reinforcement Learning.
+   [[Official]](https://proceedings.mlr.press/v267/kim25ad.html)
+
+3. 2026_arXiv_TT-VLA_On-the-Fly VLA Adaptation via Test-Time Reinforcement Learning.
+   [[arXiv]](https://arxiv.org/abs/2601.06748)
+
+4. 2026_arXiv_TTT-Parkour_TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour.
+   [[arXiv]](https://arxiv.org/abs/2602.02331)
+
 
 #### 3.1.3. Fast-Weight Test-Time Training
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2026 | [RoboTTT: Context Scaling for Robot Policies](https://arxiv.org/abs/2607.15275) | arXiv | Recurrent fast weights for long visuomotor contexts. |
-| 2026 | [WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](https://arxiv.org/abs/2607.06988) | arXiv | Deployment-stage adaptation to human videos via learned state. |
+1. 2026_arXiv_RoboTTT_RoboTTT: Context Scaling for Robot Policies.
+   [[arXiv]](https://arxiv.org/abs/2607.15275)
+
+2. 2026_arXiv_WAM-TTT_WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time.
+   [[arXiv]](https://arxiv.org/abs/2607.06988)
+
 
 ### 3.2. In-Context Learning and Adaptation
 
@@ -125,26 +143,36 @@ Methods that condition behavior on demonstrations or temporally accumulated evid
 
 #### 3.2.1. Demonstration-Based Adaptation
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2025 | [In-Context Imitation Learning via Next-Token Prediction (ICRT)](https://arxiv.org/abs/2408.15980) | ICRA | Sensorimotor demonstrations as task context. |
-| 2025 | [Instant Policy: In-Context Imitation Learning via Graph Diffusion](https://arxiv.org/abs/2411.12633) | ICLR | One-shot imitation through graph diffusion. |
-| 2025 | [RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models](https://arxiv.org/abs/2508.02062) | arXiv | In-context adaptability for pretrained VLAs. |
-| 2026 | [Behavior Prompting Policy: Demonstrations as Prompts for Manipulation](https://arxiv.org/abs/2606.30457) | arXiv | Demonstration-based behavior prompting. |
+1. 2025_ICRA_ICRT_In-Context Imitation Learning via Next-Token Prediction.
+   [[arXiv]](https://arxiv.org/abs/2408.15980)  [[GitHub]](https://github.com/Max-Fu/icrt)  [[Hugging Face]](https://huggingface.co/mlfu7/ICRT)  [[Project]](https://icrt.dev/)
+
+2. 2025_ICLR_Instant-Policy_Instant Policy: In-Context Imitation Learning via Graph Diffusion.
+   [[arXiv]](https://arxiv.org/abs/2411.12633)  [[Project]](https://www.robot-learning.uk/instant-policy)
+
+3. 2025_arXiv_RICL_RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models.
+   [[arXiv]](https://arxiv.org/abs/2508.02062)
+
+4. 2026_arXiv_BPP_Behavior Prompting Policy: Demonstrations as Prompts for Manipulation.
+   [[arXiv]](https://arxiv.org/abs/2606.30457)
+
 
 #### 3.2.2. Interaction-History Adaptation
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2021 | [Rapid Motor Adaptation for Legged Robots (RMA)](https://arxiv.org/abs/2107.04034) | RSS | Infers dynamics-related adaptation variables from observation history. |
-| 2023 | [Human-Timescale Adaptation in an Open-Ended Task Space](https://arxiv.org/abs/2301.07608) | ICML | Uses recent task experience for adaptation. |
-| 2025 | [LocoFormer: Generalist Locomotion via Long-context Adaptation](https://arxiv.org/abs/2509.23745) | CoRL | Long-context conditioning for locomotion. |
+1. 2021_RSS_RMA_Rapid Motor Adaptation for Legged Robots.
+   [[arXiv]](https://arxiv.org/abs/2107.04034)
+
+2. 2023_ICML_Human-Timescale_Human-Timescale Adaptation in an Open-Ended Task Space.
+   [[arXiv]](https://arxiv.org/abs/2301.07608)
+
+3. 2025_CoRL_LocoFormer_LocoFormer: Generalist Locomotion via Long-context Adaptation.
+   [[arXiv]](https://arxiv.org/abs/2509.23745)
+
 
 #### 3.2.3. Retrieval-Augmented Adaptation
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2026 | [RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation](https://arxiv.org/abs/2608.25585) | arXiv | Retrieval of behavior-aligned demonstrations. |
+1. 2026_arXiv_RA-VLA_RA-VLA: Retrieval-Augmented VLA for Test-Time Adaptation.
+   [[Official: ICML]](https://proceedings.mlr.press/v306/jang26c.html)  [[arXiv]](https://arxiv.org/abs/2608.25585)
+
 
 **Scope note:** Ordinary recurrent history or an unchanged task instruction does not automatically constitute test-time learning. We include work whose newly available context demonstrably supports behavioral adaptation.
 
@@ -156,28 +184,42 @@ Policy steering modifies **how actions are generated** from a pretrained policy,
 
 ### 4.1. Value- and Reward-Guided Steering
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2024 | [Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance](https://arxiv.org/abs/2410.13816) | CoRL | Value-guided modification of pretrained robot policies. |
-| 2026 | [VLS: Steering Pretrained Robot Policies via Vision-Language Models](https://arxiv.org/abs/2602.03973) | arXiv | VLM-guided action generation. |
-| 2026 | [Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies](https://arxiv.org/abs/2607.02092) | arXiv | Q-guidance during action-flow inference. |
+1. 2024_CoRL_V-GPS_Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance.
+   [[arXiv]](https://arxiv.org/abs/2410.13816)
+
+2. 2026_arXiv_VLS_VLS: Steering Pretrained Robot Policies via Vision-Language Models.
+   [[arXiv]](https://arxiv.org/abs/2602.03973)
+
+3. 2026_arXiv_Guided-Action-Flow_Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies.
+   [[arXiv]](https://arxiv.org/abs/2607.02092)
+
 
 ### 4.2. Dynamics- and Constraint-Guided Steering
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2025 | [DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](https://arxiv.org/abs/2506.13922) | NeurIPS | Dynamics-based guidance for diffusion policies. |
-| 2025 | [Latent Policy Barrier: Learning Robust Visuomotor Policies by Staying In-Distribution](https://arxiv.org/abs/2508.05941) | NeurIPS | Constraint on leaving a learned action distribution. |
-| 2026 | [OmniGuide: Universal Guidance Fields for Enhancing Generalist Robot Policies](https://arxiv.org/abs/2603.10052) | arXiv | Action guidance using learned fields. |
-| 2026 | [Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure](https://arxiv.org/abs/2606.26588) | CoRL | Steering with physical and task constraints. |
+1. 2025_NeurIPS_DynaGuide_DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance.
+   [[Official: NeurIPS]](https://proceedings.neurips.cc/paper_files/paper/2025/hash/3ec6c6fc9065aa57785eb05dffe7c3db-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2506.13922)  [[GitHub]](https://github.com/MaxDu17/DynaGuide)  [[Project]](https://dynaguide.github.io/)
+
+2. 2025_NeurIPS_Latent-Policy-Barrier_Latent Policy Barrier: Learning Robust Visuomotor Policies by Staying In-Distribution.
+   [[arXiv]](https://arxiv.org/abs/2508.05941)
+
+3. 2026_arXiv_OmniGuide_OmniGuide: Universal Guidance Fields for Enhancing Generalist Robot Policies.
+   [[arXiv]](https://arxiv.org/abs/2603.10052)
+
+4. 2026_CoRL_Task-Structure-Steering_Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure.
+   [[arXiv]](https://arxiv.org/abs/2606.26588)
+
 
 ### 4.3. Policy Composition
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2026 | [Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition (GPC)](https://arxiv.org/abs/2510.01068) | ICLR | Test-time combination of generative policy distributions. |
-| 2026 | [PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation](https://arxiv.org/abs/2607.07076) | arXiv | Guides policies with action primitives. |
-| 2026 | [Proxy Policy Steering](https://arxiv.org/abs/2609.09148) | CoRL | Proxy-policy guidance for frozen generative control. |
+1. 2026_ICLR_GPC_Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition.
+   [[Official: ICLR]](https://proceedings.iclr.cc/paper_files/paper/2026/hash/f7fc38fdd95fd146a471791b93ff9f12-Abstract-Conference.html)  [[arXiv]](https://arxiv.org/abs/2510.01068)  [[GitHub]](https://github.com/SageCao1125/GPC)  [[Project]](https://sagecao1125.github.io/GPC-Site/)
+
+2. 2026_arXiv_PriGo_PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation.
+   [[arXiv]](https://arxiv.org/abs/2607.07076)
+
+3. 2026_CoRL_Proxy-Policy-Steering_Proxy Policy Steering.
+   [[arXiv]](https://arxiv.org/abs/2609.09148)
+
 
 **Boundary:** Steering changes the action generation mechanism. Some steering methods also spend additional compute, so the boundary with scaling is not strictly exclusive.
 
@@ -189,29 +231,45 @@ Scaling improves decisions through more or adaptively allocated **inference comp
 
 ### 5.1. Parallel Sampling and Verification
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2025 | [RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models](https://arxiv.org/abs/2506.17811) | CoRL | Samples action candidates and verifies them. |
-| 2026 | [Verifier-free Test-Time Sampling for Vision-Language-Action Models (MG-Select)](https://arxiv.org/abs/2510.05681) | ICLR | Selects action candidates without an external verifier. |
-| 2025 | [RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model](https://arxiv.org/abs/2510.10975) | arXiv | Learned reward model to evaluate actions. |
-| 2026 | [Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment (CoVer)](https://arxiv.org/abs/2602.12281) | arXiv | Increased candidate verification for VLA alignment. |
+1. 2025_CoRL_RoboMonkey_RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models.
+   [[Official: CoRL]](https://proceedings.mlr.press/v305/kwok25a.html)  [[arXiv]](https://arxiv.org/abs/2506.17811)  [[Project]](https://robomonkey-vla.github.io/)
+
+2. 2026_ICLR_MG-Select_Verifier-free Test-Time Sampling for Vision-Language-Action Models.
+   [[Official: ICLR]](https://openreview.net/forum?id=UD4Rw8MOEK)  [[arXiv]](https://arxiv.org/abs/2510.05681)  [[GitHub]](https://github.com/suhyeok-jang/mg-select)  [[Project]](https://suhyeok-jang.github.io/mg-select/)
+
+3. 2025_arXiv_RoVer_RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model.
+   [[arXiv]](https://arxiv.org/abs/2510.10975)
+
+4. 2026_arXiv_CoVer_Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment.
+   [[arXiv]](https://arxiv.org/abs/2602.12281)
+
 
 ### 5.2. Sequential Search and Refinement
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2026 | [VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search](https://arxiv.org/abs/2509.22643) | ICRA | Online MCTS for robot action decision-making. |
-| 2026 | [SAIL: Test-Time Scaling for In-Context Imitation Learning with VLM](https://arxiv.org/abs/2603.08269) | arXiv | Iterative test-time search and refinement. |
-| 2026 | [E-TTS: A New Embodied Test-Time Scaling Framework for Robotic Manipulation](https://arxiv.org/abs/2606.27268) | arXiv | Integrates reasoning with iterative action improvement. |
-| 2026 | [τ0-WM: A Unified Video-Action World Model for Robotic Manipulation](https://arxiv.org/abs/2606.01027) | arXiv | Imagined action rollouts and rectification. |
+1. 2026_ICRA_VLA-Reasoner_VLA-Reasoner: Empowering Vision-Language-Action Models with Reasoning via Online Monte Carlo Tree Search.
+   [[arXiv]](https://arxiv.org/abs/2509.22643)  [[Project]](https://vla-reasoner.github.io/)
+
+2. 2026_arXiv_SAIL_SAIL: Test-Time Scaling for In-Context Imitation Learning with VLM.
+   [[arXiv]](https://arxiv.org/abs/2603.08269)
+
+3. 2026_arXiv_E-TTS_E-TTS: A New Embodied Test-Time Scaling Framework for Robotic Manipulation.
+   [[arXiv]](https://arxiv.org/abs/2606.27268)
+
+4. 2026_arXiv_tau0-WM_τ0-WM: A Unified Video-Action World Model for Robotic Manipulation.
+   [[arXiv]](https://arxiv.org/abs/2606.01027)
+
 
 ### 5.3. Adaptive Compute Allocation
 
-| Year | Paper | Venue | Main idea |
-| --- | --- | --- | --- |
-| 2026 | [VLA-ATTC: Adaptive Test-Time Compute for VLA Models with Relative Action Critic Model](https://arxiv.org/abs/2605.01194) | arXiv | Conditional allocation of inference budget. |
-| 2026 | [ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies](https://arxiv.org/abs/2606.31132) | CoRL | Learns how much sampling and denoising to use. |
-| 2026 | [τ0-VLA: A Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation](https://arxiv.org/abs/2608.16885) | arXiv | Hierarchical world-model-guided test-time computation. |
+1. 2026_arXiv_VLA-ATTC_VLA-ATTC: Adaptive Test-Time Compute for VLA Models with Relative Action Critic Model.
+   [[arXiv]](https://arxiv.org/abs/2605.01194)
+
+2. 2026_CoRL_ELASTIC_ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies.
+   [[arXiv]](https://arxiv.org/abs/2606.31132)
+
+3. 2026_arXiv_tau0-VLA_τ0-VLA: A Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation.
+   [[arXiv]](https://arxiv.org/abs/2608.16885)
+
 
 ---
 
